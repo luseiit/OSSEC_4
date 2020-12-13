@@ -92,10 +92,8 @@ public final class Check_Root_Emulator{
                 new File("/system").canWrite());
     }
     boolean isProbablyAnEmulator(){ // checking Emulator
-        return /* get("service.camera.running").equals("") && get("ro.bluetooth.tty").equals("")
+        return get("service.camera.running").equals("") && get("ro.bluetooth.tty").equals("") && get("ro.product.cpu.abilist64").equals("")
                 || Build.HARDWARE.contains("vbox")
-                || Build.HARDWARE.contains("goldfish"); */
-                get("ro.product.cpu.abilist64").equals("");
-
+                || Build.HARDWARE.contains("goldfish");
     }
 }
